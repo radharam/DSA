@@ -22,7 +22,6 @@ package src.main.java.interviewbit.linkedlist;
 
     The second argument of input contains the integer B.
 
-
     Output Format
 
     Return the head of the linked list after deleting the B-th element from the end.\
