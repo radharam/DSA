@@ -73,26 +73,16 @@ public class LinkedListSort {
         while(left != null && right != null) {
             if(left.val <= right.val) {
                 curr.next = left;
-                curr = curr.next;
                 left = left.next;
             } else {
                 curr.next = right;
-                curr = curr.next;
                 right = right.next;
             }
+
+            curr = curr.next;
         }
 
-        while(left != null) {
-            curr.next = left;
-            curr = curr.next;
-            left = left.next;
-        }
-
-        while(right != null) {
-            curr.next = right;
-            curr = curr.next;
-            right = right.next;
-        }
+        curr.next = (left == null) ? right : left;
 
         return mergedList.next;
     }

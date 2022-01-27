@@ -40,4 +40,25 @@ public class LinkedListMergeSort {
 
         return mergedList.next;
     }
+
+    public ListNode mergedListOptimized(ListNode A, ListNode B) {
+
+        ListNode mergedList = new ListNode(0), curr = mergedList;
+
+        while(A != null && B != null) {
+            if(A.val <= B.val) {
+                curr.next = A;
+                A = A.next;
+            } else {
+                curr.next = B;
+                B = B.next;
+            }
+
+            curr = curr.next;
+        }
+
+        curr.next = (A == null) ? B : A;
+
+        return mergedList.next;
+    }
 }
