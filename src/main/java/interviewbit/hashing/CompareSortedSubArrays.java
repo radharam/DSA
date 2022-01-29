@@ -1,6 +1,6 @@
 package src.main.java.interviewbit.hashing;
 
-import java.util.Random;
+import java.util.*;
 
 public class CompareSortedSubArrays {
     Set<Long> hashVal = new HashSet<>();
@@ -22,7 +22,7 @@ public class CompareSortedSubArrays {
             prefixA[i] = prefixA[i-1] + mapOfHash.get(A.get(i));
         }
 
-        ArrayList<Integer> res = new ArrayList<Integer>();
+        ArrayList<Integer> res = new ArrayList<>();
         for(ArrayList<Integer> q: B) {
             //long subArraySum1 = prefixA[q.get(1)] - ((q.get(0) == 0) ? 0 : prefixA[q.get(0)-1]);
             //long subArraySum2 = prefixA[q.get(3)] - ((q.get(2) == 0) ? 0 : prefixA[q.get(2)-1]);
@@ -41,13 +41,13 @@ public class CompareSortedSubArrays {
     public void createHash(ArrayList<Integer> A) {
 
         Random rd = new Random();
-        long hash = rd.nextInteger();
+        long hash = rd.nextInt();
         mapOfHash.put(0, hash);
         for(int i = 0; i < A.size(); i++) {
             if (!mapOfHash.containsKey(A.get(i))) {
                 hash = rd.nextInt();
                 while (hashVal.contains(hash)) {
-                    hash = rd.nextInteger();
+                    hash = rd.nextInt();
                 }
 
                 mapOfHash.put(A.get(i), hash);
