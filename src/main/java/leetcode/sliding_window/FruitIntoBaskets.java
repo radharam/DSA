@@ -3,6 +3,7 @@ package src.main.java.leetcode.sliding_window;
 import java.util.HashMap;
 import java.util.Map;
 
+// https://leetcode.com/problems/fruit-into-baskets/
 public class FruitIntoBaskets {
 
     public int totalFruit(int[] fruits) {
