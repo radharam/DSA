@@ -24,6 +24,7 @@ public class CompareSortedSubArrays {
 
         ArrayList<Integer> res = new ArrayList<>();
         for(ArrayList<Integer> q: B) {
+
             //long subArraySum1 = prefixA[q.get(1)] - ((q.get(0) == 0) ? 0 : prefixA[q.get(0)-1]);
             //long subArraySum2 = prefixA[q.get(3)] - ((q.get(2) == 0) ? 0 : prefixA[q.get(2)-1]);
             long subArraySum1 = prefixA[q.get(1)]+1 - prefixA[q.get(0)];
