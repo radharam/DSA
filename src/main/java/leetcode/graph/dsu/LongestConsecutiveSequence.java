@@ -1,4 +1,4 @@
-package src.main.java.leetcode.graph.dfs;
+package src.main.java.leetcode.graph.dsu;
 
 import java.util.HashMap;
 import java.util.Map;
