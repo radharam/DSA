@@ -1,3 +1,10 @@
+/*
+    https://leetcode.com/problems/course-schedule/
+    207. Course Schedule
+
+*/
+
+
 class CourseSchedule {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         int[] courceIndegree = new int[numCourses];
