@@ -7,14 +7,14 @@
 
 public Class NumberConnectedComponentsUndirectedGraph {
     
-    // path compression, rank hueristic
+   // path compression, rank hueristic
     class UnionFind {
         int[] parent;
         int[] rank;
         public UnionFind(int A){
-            this.parent = new int[A+1];
-            this.rank = new int[A+1];
-            for(int i=0; i<A+1; i++){
+            this.parent = new int[A];
+            this.rank = new int[A];
+            for(int i=0; i<A; i++){
                 this.parent[i] = i;
                 this.rank[i] = 1;
             }
