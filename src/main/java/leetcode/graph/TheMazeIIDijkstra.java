@@ -3,10 +3,12 @@
   505. The Maze II
   
   check for shortest distance
+  
+  TC: O(NNM * LogNM) SC: O(NM)
 
 */
 
-public class TheMazeII {
+public class TheMazeIIDijkstra {
     public int shortestDistance(int[][] maze, int[] start, int[] dest) {
         int[][] distance = new int[maze.length][maze[0].length];
         for(int[] dist: distance) {
