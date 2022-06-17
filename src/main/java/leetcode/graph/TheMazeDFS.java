@@ -6,7 +6,7 @@ check if there is a path from source to destination with DFS approach
 
 */
 
-public class TheMazeDFS {
+class Solution {
     // DFS Aproach
     public boolean hasPath(int[][] maze, int[] start, int[] destination) {
         boolean[][] visited = new boolean[maze.length][maze[0].length];
@@ -21,8 +21,11 @@ public class TheMazeDFS {
         // check if reached destination
         if(start[0] == destination[0] && start[1] == destination[1]) return true;
         
+        // Main Logic
+        // mark visited
         visited[start[0]][start[1]] = true;
         
+        // directions
         int u = start[0] - 1, r = start[1] + 1, d = start[0] + 1, l = start[1] - 1;
         
         // move up
