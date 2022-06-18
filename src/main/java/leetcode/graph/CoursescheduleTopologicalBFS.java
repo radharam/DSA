@@ -17,7 +17,7 @@ class CoursescheduleTopologicalBFS {
         buildGraph(adjList, numCourses, prerequisites, courseIndegree); // build adjGraph
         Queue<Integer> q = new LinkedList();
         for(int i = 0; i < numCourses; i++) {
-            if(courseIndegree[i] == 0) q.offer(i); // add to queue if inndegree is 0
+            if(courseIndegree[i] == 0) q.offer(i); // add to queue if indegree is 0
         } // TC: O(N)
         
         // iterate queue
@@ -44,7 +44,7 @@ class CoursescheduleTopologicalBFS {
         } // TC: O(N)
         
         for(int[] pre: prereq) {
-            adjList.get(pre[1]).add(pre[0]);
+            adjList.get(pre[1]).add(pre[0]); // get the list at that index n add values to it
             courseIndegree[pre[0]]++;
         } // TC: O(N)
     }
