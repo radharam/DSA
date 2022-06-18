@@ -1,4 +1,4 @@
-class PacificAtlanticOcean {
+class PacificAtlanticOceanDFS {
     int rowLen = 0, colLen = 0;
     int[][] landHeights; // global reference to land heights
     int[][] dirs = new int[][]{{-1, 0}, {0, 1}, {1, 0}, {0, -1}}; // 4 directions
