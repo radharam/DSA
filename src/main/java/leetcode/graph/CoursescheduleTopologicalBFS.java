@@ -4,7 +4,7 @@
   
   207. Course Schedule
   
-  TC: O(N)
+  TC: O(N + E)
   
 */
 
@@ -46,6 +46,6 @@ class CoursescheduleTopologicalBFS {
         for(int[] pre: prereq) {
             adjList.get(pre[1]).add(pre[0]); // get the list at that index n add values to it
             courseIndegree[pre[0]]++;
-        } // TC: O(N)
+        } // TC: O(E)
     }
 }
