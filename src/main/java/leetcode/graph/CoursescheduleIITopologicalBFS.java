@@ -3,7 +3,7 @@
     https://leetcode.com/problems/course-schedule-ii/
     210. Course Schedule II
   
-    TC: O(N)
+    TC: O(N + E)
 */
 
 class CoursescheduleIITopologicalBFS {
@@ -42,6 +42,6 @@ class CoursescheduleIITopologicalBFS {
         for(int[] pre: prereq) {
             adjList.get(pre[1]).add(pre[0]);
             courseIndegree[pre[0]]++;
-        } // TC: O(N)
+        } // TC: O(E)
     }
 }
