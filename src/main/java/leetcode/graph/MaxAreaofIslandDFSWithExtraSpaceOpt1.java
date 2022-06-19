@@ -5,7 +5,7 @@
     TC: O(N^2 * M^2)
     SC: O(NM)
 */
-class MaxAreaofIslandDFSWithExtraSpaceOpt1 {
+public class MaxAreaofIslandDFSWithExtraSpaceOpt1 {
     public int maxAreaOfIsland(int[][] grid) {
         boolean[][] visited = new boolean[grid.length][grid[0].length]; // define once nn reuse
         int[][] dirs = new int[][]{{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
