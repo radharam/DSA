@@ -1,3 +1,10 @@
+/*
+    https://leetcode.com/problems/max-area-of-island/
+    695. Max Area of Island
+    
+    TC: O(N^2 * M^2)
+    SC: O(NM)
+*/
 class MaxAreaofIslandDFSWithExtraSpaceOpt1 {
     public int maxAreaOfIsland(int[][] grid) {
         boolean[][] visited = new boolean[grid.length][grid[0].length]; // define once nn reuse
