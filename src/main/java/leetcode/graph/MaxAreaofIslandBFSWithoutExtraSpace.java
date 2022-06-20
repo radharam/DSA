@@ -44,7 +44,7 @@ public class MaxAreaofIslandBFSWithoutExtraSpace {
                 
                 if(grid[dx][dy] == 1) {  // if land
                     area++; // incr area
-                    grid[dx][dy] = 0; // set to 0, to nnot visit again
+                    grid[dx][dy] = 0; // set to 0, to not visit again
                     q.offer(new int[]{dx, dy}); // add to queue to visit its adjacent islands
                 }
                 
