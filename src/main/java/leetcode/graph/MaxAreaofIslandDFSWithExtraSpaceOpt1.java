@@ -34,6 +34,7 @@ public class MaxAreaofIslandDFSWithExtraSpaceOpt1 {
     public int computeAreaDFSWithExtraSpaceApproach2(int[][] grid, int r, int c, boolean[][] visited) {
         
         if(r < 0 || r >= grid.length || c < 0 || c >= grid[0].length || grid[r][c] == 0 || visited[r][c]) return 0;
+        int[][] dirs = new int[][]{{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
         
         visited[r][c] = true;
         int area = 1;
