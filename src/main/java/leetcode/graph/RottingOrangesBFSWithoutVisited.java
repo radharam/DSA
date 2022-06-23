@@ -9,7 +9,7 @@
 */
 
 
-class RottingOrangesBFS {
+class RottingOrangesBFSWithoutVisited {
     public int orangesRotting(int[][] grid) {
         return rottingOranges(grid);
     }
