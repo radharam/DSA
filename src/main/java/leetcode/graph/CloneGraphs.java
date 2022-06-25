@@ -30,6 +30,8 @@ class CloneGraphs {
         return cloneGraphBFSImproved(node);
     }
     
+    
+    // BFS Approach with extra space
     public Node cloneGraphBFSImproved(Node node) {
         if(node == null) return null;
         
@@ -57,6 +59,8 @@ class CloneGraphs {
         return clonedNode;
     }
     
+    
+    // BFS Approach without extra space
     public Node cloneGraphBFS(Node node) {
         if(node == null) return null;
         Map<Node, Node> cloneMap = new HashMap();
@@ -84,5 +88,38 @@ class CloneGraphs {
         }
         
         return newNode;
+    }
+    
+    
+    // DFS with extra space
+    public Node cloneGraphDFS(Node node) {
+        if(node == null) return null;
+        
+        Map<Node, Node> cloneMap = new HashMap<>();
+        Set<Node> visited = new HashSet<>();
+        Stack<Node> st = new Stack<>();
+        Node clonedNode = new Node(node.val);
+        cloneMap.put(node, clonedNode);
+        st.push(node);
+        visited.add(node);
+        
+        while(!st.isEmpty()) {
+            Node origNode = st.pop();
+            
+            for(Node neighbor: origNode.neighbors) {
+                if(visited.contains(neighbor)) {
+                    cloneMap.get(origNode).neighbors.add(cloneMap.get(neighbor));
+                    continue;
+                }
+                
+                Node clonedNeighbor = new Node(neighbor.val);
+                cloneMap.put(neighbor, clonedNeighbor);
+                cloneMap.get(origNode).neighbors.add(cloneMap.get(neighbor));
+                visited.add(neighbor);
+                st.push(neighbor);
+            }
+        }
+        
+        return clonedNode;
     }
 }
