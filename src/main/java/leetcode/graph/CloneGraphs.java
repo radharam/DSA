@@ -122,4 +122,34 @@ class CloneGraphs {
         
         return clonedNode;
     }
+    
+    
+    // DFS without extra space
+    
+    public Node cloneGraphDFS(Node node) {
+        if(node == null) return null;
+        
+        Map<Node, Node> cloneMap = new HashMap();
+        Stack<Node> st = new Stack();
+        
+        Node clonedNode = new Node(node.val);
+        cloneMap.put(node, clonedNode);
+        st.push(node);
+        
+        while(!st.isEmpty()) {
+            Node origNode = st.pop();
+            
+            for(Node neighbor: origNode.neighbors) {
+                if(cloneMap.get(neighbor) == null) {
+                    Node clonedNeighbor = new Node(neighbor.val);
+                    cloneMap.put(neighbor, clonedNeighbor);
+                    st.push(neighbor);
+                }
+                
+                cloneMap.get(origNode).neighbors.add(cloneMap.get(neighbor));
+            }
+        }
+        
+        return clonedNode;
+    }
 }
