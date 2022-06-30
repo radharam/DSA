@@ -126,7 +126,7 @@ class CloneGraphs {
     
     // DFS without extra space
     
-    public Node cloneGraphDFS(Node node) {
+    public Node cloneGraphDFSImproved(Node node) {
         if(node == null) return null;
         
         Map<Node, Node> cloneMap = new HashMap();
