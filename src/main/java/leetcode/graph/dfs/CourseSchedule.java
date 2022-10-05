@@ -1,9 +1,14 @@
-/*
+package src.main.java.leetcode.graph.dfs;/*
     https://leetcode.com/problems/course-schedule/
     207. Course Schedule
 
 */
 
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 class CourseSchedule {
     public boolean canFinish(int numCourses, int[][] prerequisites) {

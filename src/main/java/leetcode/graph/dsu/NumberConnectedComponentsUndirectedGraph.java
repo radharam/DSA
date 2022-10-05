@@ -4,6 +4,9 @@
   323. Number of Connected Components in an Undirected Graph
 
 */
+/**
+import java.util.HashSet;
+import java.util.Set;
 
 public Class NumberConnectedComponentsUndirectedGraph {
     
@@ -49,7 +52,7 @@ public Class NumberConnectedComponentsUndirectedGraph {
             uf.union(edge[0], edge[1]);
         }
         
-        Set<Integer> cntOfDistinctConnComp = new HashSet();
+        Set<Integer> cntOfDistinctConnComp = new HashSet<>();
         for(int i = 0; i < n; i++) {
             cntOfDistinctConnComp.add(uf.find(i));
         }
@@ -57,3 +60,4 @@ public Class NumberConnectedComponentsUndirectedGraph {
         return cntOfDistinctConnComp.size();
     }
 }
+*/

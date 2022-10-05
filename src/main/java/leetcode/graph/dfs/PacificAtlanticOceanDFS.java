@@ -1,3 +1,8 @@
+package src.main.java.leetcode.graph.dfs;
+
+import java.util.ArrayList;
+import java.util.List;
+
 class PacificAtlanticOceanDFS {
     int rowLen = 0, colLen = 0;
     int[][] landHeights; // global reference to land heights
@@ -11,7 +16,7 @@ class PacificAtlanticOceanDFS {
         rowLen = heights.length; colLen = heights[0].length;
         
         // visited indexes
-        boolean[][] v_atl = new boolean[rowLen][colLen], v_pac = new                          boolean[rowLen][colLen];
+        boolean[][] v_atl = new boolean[rowLen][colLen], v_pac = new boolean[rowLen][colLen];
         landHeights = heights;
         
         //travese first n last row

@@ -1,4 +1,4 @@
-/*
+package src.main.java.leetcode.graph.dfs;/*
 https://leetcode.com/problems/graph-valid-tree/
 
 261. Graph Valid Tree
@@ -6,6 +6,8 @@ https://leetcode.com/problems/graph-valid-tree/
 Checks for cycle, nn if all nodes are connnected
 
 */
+
+import java.util.*;
 
 class GraphValidTree {
     public boolean validTree(int n, int[][] edges) {

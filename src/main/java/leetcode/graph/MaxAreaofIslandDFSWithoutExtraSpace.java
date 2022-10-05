@@ -1,4 +1,4 @@
-
+package src.main.java.leetcode.graph;
 /*
     https://leetcode.com/problems/max-area-of-island/
     695. Max Area of Island
@@ -14,7 +14,7 @@ public class MaxAreaofIslandDFSWithoutExtraSpace {
         for(int r = 0; r < grid.length; r++) {
             for(int c = 0; c < grid[0].length; c++) {
                 //maxArea = Math.max(maxArea, computeAreaDFSWithoutExtraSpace(grid, r, c));
-                maxArea = Math.max(maxArea, computeAreaDFSWithoutExtraSpace(grid, r, c, dirs));
+                maxArea = Math.max(maxArea, computeAreaDFSWithoutExtraSpace(grid, r, c));
             }
         }
         
@@ -26,20 +26,21 @@ public class MaxAreaofIslandDFSWithoutExtraSpace {
         if(r < 0 || r >= grid.length || c < 0 || c >= grid[0].length || grid[r][c] == 0) return 0;
         
         grid[r][c] = 0;
-        return (1 + computeAreaDFSWithExtraSpace(grid, r-1, c) +
-                    computeAreaDFSWithExtraSpace(grid, r+1, c) +
-                    computeAreaDFSWithExtraSpace(grid, r, c-1) +
-                    computeAreaDFSWithExtraSpace(grid, r, c+1));
+        return (1 + computeAreaDFSWithoutExtraSpace(grid, r-1, c) +
+                computeAreaDFSWithoutExtraSpace(grid, r+1, c) +
+                computeAreaDFSWithoutExtraSpace(grid, r, c-1) +
+                computeAreaDFSWithoutExtraSpace(grid, r, c+1));
     }
-    
+
     public int computeAreaDFSWithoutExtraSpaceApproach2(int[][] grid, int r, int c) {
         
         if(r < 0 || r >= grid.length || c < 0 || c >= grid[0].length || grid[r][c] == 0) return 0;
 
         int area = 1;
+        int[][] dirs = new int[][] {};
         for(int[] dir: dirs) {
             int x = r + dir[0], y = c + dir[1];
-            area += computeAreaDFSWithExtraSpace(grid, x, y, dirs);
+            area += computeAreaDFSWithoutExtraSpaceApproach2(grid, x, y);
         }
         
         return area;
@@ -53,7 +54,7 @@ public class MaxAreaofIslandDFSWithoutExtraSpace {
         int area = 1;
         for(int[] dir: dirs) {
             int x = r + dir[0], y = c + dir[1];
-            area += computeAreaDFSWithExtraSpace(grid, x, y);
+            area += computeAreaDFSWithoutExtraSpaceApproach3(grid, x, y, dirs);
         }
         
         return area;
